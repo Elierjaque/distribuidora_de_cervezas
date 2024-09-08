@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    
+}
+
+.grid-container{
+    display: grid;
+    /*background-color: gray;*/
+    max-width: none;
+    width: 100%;
+    /*min-height: 100vh; /*esto es para que el contenido empuje hacia abajo y la pagina se autoajuste a su altura*/
+    grid-template-areas:
+    "navbar header"
+    "menu main"
+    "footer footer";
+    /*column-gap: 10px; /*esto lo podria escribir en 1 sola linea asi gap; 20px 10px;   */ 
+    /*row-gap: 1px;*/
+    grid-template-columns: minmax(200px, 0.1fr) 1fr; /* en este caso tengo 2 columnas*/
+}
+
+nav{
+    grid-area: navbar;
+    background-color: #F9B000;
+}
+
+header{ 
+    grid-area: header;
+    background-color: #F9B000;
+    height: 60px; 
+}
+
+navbar{
+    grid-area: navbar;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+}
+
+menu{
+    grid-area: menu;
+    background-color: #FB6723;
+    /*height: 400px;*/
+}
+
+main{
+    grid-area: main;
+    /*background-color: tomato;*/
+    /*height: 400px;*/
+    padding: 5px; /*se lo puedo dar para empujar el contenido hacia adentro de la caja*/   
+}
+
+footer{
+    grid-area: footer;
+    background-color: #3C3C3C;
+    height: 80px;
+}
+
+
+/*---stylo al menu--*/
+.container-menu{
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+    padding: 12PX;
+}
+
+ul{
+    list-style-type: none; /* para eliminar el marcador en un listado ul li*/
+}
+
+.tipo-cerveza{
+    padding: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.tipo-cerveza:hover{
+    color: black;
+}
+
+/*configuacion detallada*/
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+    /*font-size: 30px;    */
+    /*colocar el tamaño con codigo*/
+}
+
+/*---efectos hover, en zona del menu--*/
+.el{
+    font-size: 24px;
+}
+
+.menu:hover{ /*esto es para que cuando pase el mouse sobre el link se coloque de color negro*/
+    color: white;
+}
+
+.el:hover{
+    font-size: 24px;
+    color: white;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-main{
+    display: flex;
+    justify-content:space-between ;
+    /*flex-direction: column;*/
+    /*justify-content: start;
+    /*align-items: center;*/
+    /*gap: 0px 10px;*/
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap; /*nowrap para que los elementos se mantengan en una sola linea*/
+    /*width: 250px;*/
+    flex: 33.33%;
+    /*padding: 10px;*/
+    margin: 4px;
+    
+}
+.producto{
+    display: flex;
+    flex: 25%;
+    flex-direction: column;    
+    background-color: beige;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;/*para quw cuanquiel elemento que este en el contenedor no aparesca en la tarjeta*/
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default; /*para que cuando pase el cursor sobre la car, aparesca el curso y no una raya*/
+    transition: all 400ms ease;   
+}
+
+.producto:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 4); /*con este codigo las tarjetas tienen sombra y al pasar el mause sobre ella, esta se eleva*/
+    transform: translateY(-3%);
+
+}
+
+.producto .nombre-producto{ /*este codigo es para que el contenido se adpate al espacio de la card y no se desconfigure la alineacion del boton*/
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.tamaño-img{
+    width: 100%; /*con esto la imagen se adapta al tamaño total de la card*/
+    border-radius: 10px 10px 0px 0px; /*son los 4 lados de la imagen*/
+    justify-content: center;
+}
+
+.nombre-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: tomato;*/
+    padding: 2px;
+    /*gap:    px; /*espacio entre nombre producto y precio*/
+}
+
+.boton{
+    display: flex;
+    background-color: #FB6723;
+    justify-content: center;
+    align-items: center;
+    
+ 
+}
+
+.hover:hover{
+    background-color: aqua;
+    color: black;
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+   
+}
