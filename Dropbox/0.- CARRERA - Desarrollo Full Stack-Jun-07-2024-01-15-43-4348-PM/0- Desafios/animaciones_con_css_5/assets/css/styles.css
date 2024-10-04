@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto", sans-serif;
+}
+
+/* GRID CONTAINER */
+body{
+    font-family: "Roboro",sans-serif;
+    font-size: 1.2em; /* tamaño de la fuente */
+}
+
+.grid-container > *{ /* el simbolo mayor > y el asterisco * es para que las propiedades afecten a todos lo hijos */
+    box-shadow: 10px 6px 37px -13px rgba(51,51,51,0.74);
+    text-align: center;
+    font-weight: 500;
+}
+
+.grid-container{
+    display: grid; /* con esta configuracion me funciona responsive para movil */
+    grid-template:
+    "header" 200px /* con esto le doy la altura de mi caja o bax */
+    "navbar" 50px
+    "main" 100px
+    "sidebar" /* barra lateral */
+    "footer";
+
+    .header{
+        grid-area: header;
+    }
+
+    .navbar{
+        grid-area: navbar;
+        background-image: url("../img/espuma\ de\ cerveza1.jpg");/* cuando no me da la ruta, coloco 2 puntos y la barra..... */
+        background-repeat: no-repeat;
+        width: 100%;
+        background-position: center center;
+        background-size: cover; /* la imagen cubre todo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar{
+        grid-area: sidebar;
+        /*background-color: #F9B000;*/
+        background-image: url("../img/espuma\ de\ cerveza.webp");/* cuando no me da la ruta, coloco 2 puntos y la barra..... */
+        background-repeat: no-repeat;
+        width: 100%;
+        background-position: center center;
+        background-size: cover; /* la imagen cubre todo */
+        gap: 20px;
+    }
+
+    .main{
+        grid-area: main;
+        background-color: white;
+    }
+
+    .footer{
+        grid-area: footer;
+        background-color: #B9121B;
+    }
+
+    /* MEDIA QUERY */
+    @media (width <= 576px) { /* punto de quiebre modo tablet */
+        grid-template:
+        "header" auto
+        "navbar" auto
+        "sidebar" auto
+        "main" auto
+        "footer" auto/* esta barrita diagonal es para colocar el ancho de las 2 columnas dek modo tablet */ 
+    }
+
+    @media (min-width:768px) { /* punto de quiebre modo tablet */
+        grid-template:
+        "header navbar" 50px 
+        "header navbar" 50px 
+        "sidebar main" auto
+        "footer footer" 100px/ /* esta barrita diagonal es para colocar el ancho de las 2 columnas dek modo tablet */
+        200px auto;
+    }
+   
+}
+
+/* CONFIGURACON MAIN */
+.container-main{
+    display: flex;
+    justify-content:space-between ;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap; /*nowrap para que los elementos se mantengan en una sola linea*/
+    flex: 33.33%;
+    margin: 4px; 
+}
+.producto{
+    display: flex;
+    flex: 25%;
+    flex-direction: column;    
+    background-color: beige;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;/*para quw cuanquiel elemento que este en el contenedor no aparesca en la tarjeta*/
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
+    cursor: default; /*para que cuando pase el cursor sobre la car, aparesca el curso y no una raya*/
+    transition: all 400ms ease;   
+}
+
+.producto:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 4); /*con este codigo las tarjetas tienen sombra y al pasar el mause sobre ella, esta se eleva*/
+    transform: translateY(-4%);/* la card se mueve hacia arriba */
+
+}
+
+.producto .nombre-producto{ /*este codigo es para que el contenido se adpate al espacio de la card y no se desconfigure la alineacion del boton*/
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.tamaño-img{
+    width: 100%; /*con esto la imagen se adapta al tamaño total de la card*/
+    border-radius: 10px 10px 0px 0px; /*son los 4 lados de la imagen*/
+    justify-content: center;
+}
+
+.nombre-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: tomato;*/
+    padding: 2px;
+    /*gap:    px; /*espacio entre nombre producto y precio*/
+}
+
+.boton{
+    display: flex;
+    background-color: #FB6723;
+    justify-content: center;
+    align-items: center;
+    
+ 
+}
+
+.hover:hover{
+    background-color: aqua;
+    color: #FB6723;
+}
+
+
+/* footer */
+.footer{
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+
+/******** NAV PRINCIPAL *******/
+
+.grid-container-global{
+    display: grid;
+    grid-template-areas: 
+    ".navbar-main"
+    ;
+}
+
+.navbar-main{
+    /*background-color: #F9B000;*/
+    text-align: center;
+}
+
+.navbar-main div{
+    color: aqua;
+    font-style: italic; /*es el estilo de las letras*/
+    letter-spacing: 0.2em; /*Este código aumentará ligeramente el espacio entre las letras de todo el texto dentro de los párrafos*/
+    font-size: 1.5em; /*es el tamaño de la letra*/
+}
+
+.navbar-main ul{
+    list-style: none; /*para queu desaparesca el punto de la viñeta*/
+    margin-top: 0.5em; /* es para separar el titulo de los enlaces  ul */
+}
+
+.navbar-main ul a{
+    text-decoration: none; /*para que desaparesca el subrayado de link*/
+    color: #3C3C3C;
+    display: block;
+    padding: 0.5em 0;
+    border-left: 5px solid transparent;
+}
+
+.navbar-main ul a:hover{
+    background-color: #FB6723;
+    color: white; 
+    position: relative;
+    transition: all 500ms ease;
+    border-left: 5px solid #B9121B ;
+    padding: 25px; 
+}
+
+
+
+
+/* logo */
+.header{
+    display: block;
+}
+
+.tamaño-logo{
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Usa "contain" si prefieres que no se corte */
+}
+
+/* PAGINA NOSOTROS */
+.flex-container{
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+    background-image: url(../img/img_1/banner.webp);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* para que cubra todo el espacio la img */  
+    
+}
+
+.caja{
+    color: white;
+    height: 200px;
+    width: 50%;
+    margin: 60px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+
+/* PAGINA CONTACTO */
+
+.container-contacto{
+    display: flexbox;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+    text-align: center;
+    background-image: url(../img/img_1/banner.webp);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* para que cubra todo el espacio la img */
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+
+.container-form{
+    display: flexbox;
+    flex-direction: column;
+    padding: 20px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-grup{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: white;
+
+}
+
+h2{
+    color:white;
+    font-size: 35px;
+}
+
+label{
+    color: white;
+    font-size: 15px;
+    font-weight: 600; /* se utiliza para definir el grosor o "peso" de una fuente en el texto. */
+    margin-bottom: 15px; /* Controla la distancia entre la parte inferior de un elemento y el siguiente contenido o elemento. */    
+}
+
+input, textarea{
+    padding: 17px 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #FB6723;
+    border: 2px solid #F9B000;
+    color: white;
+    outline: none;
+}
+
+input::placeholder,textarea::placeholder{
+    color: #b5cab6;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.form-txt{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.form-txt a{
+    color: #B9121B;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn{
+    font-size: 16px;
+    color:white;
+    border: 25px;
+    background-color: #B9121B;
+    cursor: pointer; /* para que aparesca la manito comoo cursor */
+}
+
+.btn:hover{
+    background-color:#FED203;
+    box-shadow: 0 0 60px yellow;
+    transition: all 500ms ease;
+}
+
+
+
+/* UBICACION */
+.ubicacion{
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-height: auto;
+}
+
+.mapa{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+}
+
