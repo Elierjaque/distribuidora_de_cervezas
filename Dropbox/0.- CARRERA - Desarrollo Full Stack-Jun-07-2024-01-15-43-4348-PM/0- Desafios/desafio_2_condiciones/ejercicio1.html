@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/Favicon-32x32.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Condiciones</title>
+</head>
+<body>
+    <div>
+        <h1>DESAFIO DE CONDICIONES</h1>
+        <a href="index.html">MENU</a>
+        <h2>Ejercicio N°1</h2>
+        <p>1. Se debe construir una página con una única imagen, al hacerle click a la imagen se le debe agregar un borde rojo de 2 pixeles, al hacerle click nuevamente se le debe quitar el borde.
+        </p>
+
+        <details>
+            <summary>Respuesta</summary>
+            <img class="img" id="img_bahia" src="./assets/img/bahia_acantilada_Aysen.webp" alt="Paisaje de Bahia Acantilado en Puerto Aysen, sur de Chile"  
+            onclick=" let click = document.querySelector('#img_bahia'); //Comilla Simple, mantener Alt presionado, escribe 39 en el teclado numérico.//
+            if (click.style.border === '2px solid red') {
+                click.style.border = '0';}
+            else {
+                click.style.border = '2px solid red';
+            }
+        ">
+        </details>
+
+    </div>
+
+
+     
+</body>
+</html>

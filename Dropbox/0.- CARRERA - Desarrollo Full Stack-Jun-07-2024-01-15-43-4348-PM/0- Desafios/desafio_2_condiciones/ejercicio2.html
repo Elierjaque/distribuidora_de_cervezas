@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/Favicon-32x32.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Condiciones</title>
+</head>
+<body>
+    <div>
+        <h1>DESAFIO DE CONDICIONES</h1>
+        <a href="index.html">MENU</a>
+        <h2>Ejercicio N°2</h2>
+        <P> Se debe construir una página web que permita pedir hasta 10 emblema de marcas de vehiculos de los 3 tipos disponibles. Para eso deberá existir un input debajo de cada imagen donde el usuario podrá ingresar un número. En caso de que la suma de todos los emblemas seleccionados sea menor o igual 10 se indicará en un párrafo nuevo la cantidad de emblemas llevados. Ejemplo "Lleva emblema de marcas de vehiculos" en cualquier otro caso se mostrará un texto que dice "Lleva demasiados emblemas de marcas de vehiculos". 
+        </P>
+
+        <details>
+            <summary>Respuesta</summary>
+
+            <div class="container-emblemas">
+                <div class="box-emblema">
+                    <img class="img_marca" src="./assets/img/toyota-7.svg" alt="TOYOTA">
+                    <input id="TOYOTA" type="text">
+                </div>
+
+                <div class="box-emblema">
+                    <img class="img_marca" src="./assets/img/mitsubishi-1.svg" alt="MITSUBISHI">
+                    <input id="MITSUBISHI" type="text">
+                </div>
+            
+                <div class="box-emblema">
+                    <img class="img_marca" src="./assets/img/nissan-6.svg" alt="NISSAN">
+                    <input id="NISSAN" type="text">
+                </div>
+            </div>
+            <p id="Suma_de_emblema_vehiculos"></p>
+            <button onclick=" 
+            TOYOTA = Number(document.querySelector('#TOYOTA').value); /*Si tienes un campo `<input>`, puedes obtener lo que el usuario ingresó utilizando `.value`*/
+            MITSUBISHI = Number(document.querySelector('#MITSUBISHI').value);
+            NISSAN = Number(document.querySelector('#NISSAN').value);
+
+            cantidad_de_emblemas = TOYOTA + MITSUBISHI + NISSAN;
+
+            total_de_emblemas = document.querySelector('#Suma_de_emblema_vehiculos')
+
+            if(cantidad_de_emblemas <= 10){
+                total_de_emblemas.innerText = `Estas llevando ` + cantidad_de_emblemas + ` emblemas de marcas de vehiculos`; /*aqui use comilla invertida o acento grave se hace con ALT + 96* y se deja 1 espacio al cierre de la frase*/
+            }else{
+                total_de_emblemas.innerText = `Estas llevando demasiados emblemas de marcas de vehiculos`;
+            }
+            ">Verificar</button>
+
+            
+            
+
+
+        </details>
+
+    </div>
+
+
+    
+
+
+    
+</body>
+</html>
